@@ -42,9 +42,9 @@ h2.giorno {
 
 .esercizio img {
   width: 100%;
-  height: 200px; /* Fixed height for consistent appearance */
+  height: 100px; /* Dimensione più piccola per le immagini */
   border-radius: 4px;
-  object-fit: cover; /* Ensures the entire image fits without distortion */
+  object-fit: cover; /* Assicura che l'intera immagine sia visibile */
 }
 
 .nome-esercizio {
