@@ -38,11 +38,14 @@ h2.giorno {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: inline-block;
   vertical-align: top;
+  text-align: center;
 }
 
 .esercizio img {
   width: 100%;
-  height: 75px; /* Dimensione ancora più piccola per le immagini */
+  
+  margin: 0 auto;
+  display: block;
   border-radius: 4px;
   object-fit: cover; /* Assicura che l'intera immagine sia visibile */
 }
