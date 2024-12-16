@@ -42,7 +42,7 @@ h2.giorno {
 }
 
 .esercizio img {
-  width: 100%;  
+  width: 100%;
   margin: 0 auto;
   display: block;
   border-radius: 4px;
@@ -56,15 +56,44 @@ h2.giorno {
   color: #333;
 }
 
-/* Stile responsive */
-@media (max-width: 768px) {
-  .esercizio {
-    width: 45%;
+/* Stile per la stampa: Forzare interruzione pagina per ogni giorno */
+@media print {
+  body {
+    font-size: 10px;
+    margin: 0;
   }
-}
 
-@media (max-width: 480px) {
+  h2.giorno {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .scheda-giorno {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
   .esercizio {
-    width: 100%;
+    width: 25%;
+    padding: 0.5rem;
+  }
+
+  .esercizio img {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .nome-esercizio {
+    font-size: 0.9rem;
+  }
+
+  /* Aggiungi l'interruzione di pagina per ogni giorno */
+  .giorno {
+    page-break-before: always; /* Inizia una nuova pagina per ogni giorno */
+  }
+
+  /* Nascondere gli elementi non necessari alla stampa */
+  .no-print {
+    display: none;
   }
 }
