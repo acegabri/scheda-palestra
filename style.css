@@ -1,0 +1,68 @@
+/* Reset di base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 2rem;
+  color: #333;
+}
+
+h2.giorno {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.scheda-giorno {
+  background: white;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.esercizio {
+  width: 30%;
+  margin: 1%;
+  text-align: center;
+  background: #e8eaf6;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.esercizio img {
+  width: 100%;
+  height: 200px; /* Fixed height for consistent appearance */
+  border-radius: 4px;
+  object-fit: cover; /* Ensures the entire image fits without distortion */
+}
+
+.nome-esercizio {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Stile responsive */
+@media (max-width: 768px) {
+  .esercizio {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .esercizio {
+    width: 100%;
+  }
+}
