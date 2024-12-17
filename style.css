@@ -12,6 +12,7 @@ body {
   color: #333;
 }
 
+/* Stile intestazione */
 h2.giorno {
   text-align: center;
   font-size: 2rem;
@@ -19,6 +20,7 @@ h2.giorno {
   color: #444;
 }
 
+/* Stile per ogni giorno */
 .scheda-giorno {
   background: white;
   margin-bottom: 2rem;
@@ -26,23 +28,29 @@ h2.giorno {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+
+  /* Layout responsive */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
+/* Stile per ogni esercizio */
 .esercizio {
-  width: 30%;
-  margin: 1%;
-  text-align: center;
+  flex: 1 1 calc(100% - 2rem);  /* Larghezza predefinita su mobile */
+  max-width: 300px; /* Limite massimo su schermi grandi */
   background: #e8eaf6;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  vertical-align: top;
   text-align: center;
 }
 
 .esercizio img {
   width: 100%;
+  max-width: 300px;  /* Limita la larghezza massima */
+  height: auto;     /* Mantiene le proporzioni */
   margin: 0 auto;
   display: block;
   border-radius: 4px;
@@ -56,7 +64,7 @@ h2.giorno {
   color: #333;
 }
 
-/* Stile per la stampa: Forzare interruzione pagina per ogni giorno */
+/* Stile per la stampa */
 @media print {
   body {
     font-size: 10px;
@@ -87,13 +95,26 @@ h2.giorno {
     font-size: 0.9rem;
   }
 
-  /* Aggiungi l'interruzione di pagina per ogni giorno */
+  /* Forza l'interruzione di pagina per ogni giorno */
   .giorno {
-    page-break-before: always; /* Inizia una nuova pagina per ogni giorno */
+    page-break-before: always;
   }
 
-  /* Nascondere gli elementi non necessari alla stampa */
+  /* Nascondi elementi non necessari alla stampa */
   .no-print {
     display: none;
+  }
+}
+
+/* Media Queries per layout responsive */
+@media (min-width: 600px) {
+  .esercizio {
+    flex: 1 1 calc(45% - 2rem);  /* Due per riga su tablet */
+  }
+}
+
+@media (min-width: 900px) {
+  .esercizio {
+    flex: 1 1 calc(30% - 2rem);  /* Tre per riga su desktop */
   }
 }
